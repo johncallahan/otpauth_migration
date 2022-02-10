@@ -9,7 +9,7 @@ class OtpAuthMigration {
 
   List<String> rfc3548 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","2","3","4","5","6","7"];
 
-  String build(List<String> otpauths) {
+  String encode(List<String> otpauths) {
     var gai = GoogleAuthenticatorImport();
     otpauths.forEach((otp) {
       var uri = Uri.parse(otp);
@@ -36,22 +36,7 @@ class OtpAuthMigration {
     return "otpauth-migration://offline?data=${base64.encode(bytes)}";
   }
 
-  String _mock_build(List<String> otpauths) {
-    var gai = GoogleAuthenticatorImport();
-    otpauths.forEach((otp) {
-      var gaip = GoogleAuthenticatorImport_OtpParameters();
-      gaip.name = "Example:alice@google.com";
-      gaip.secret = [72, 101, 108, 108, 111, 33, 222, 173, 190, 239];
-      gaip.issuer = "Example";
-      gaip.type = GoogleAuthenticatorImport_OtpType.OTP_TYPE_TOTP;
-      gai.otpParameters.add(gaip);
-    });
-    final bytes = gai.writeToBuffer();
-    return base64.encode(bytes);
-  }
-
-
-  List<String> parse(String value) {
+  List<String> decode(String value) {
     // check prefix "otpauth-migration://offline?data="
     // extract suffix - Base64 encode
     List<String> results = [];
