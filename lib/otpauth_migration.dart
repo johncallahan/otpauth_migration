@@ -12,13 +12,26 @@ class OtpAuthMigration {
   String build(List<String> otpauths) {
     var gai = GoogleAuthenticatorImport();
     otpauths.forEach((otp) {
+      var uri = Uri.parse(otp);
+      //uri.queryParameters.forEach((k, v) {
+      //  print('key: $k - value: $v');
+      //  });
       var gaip = GoogleAuthenticatorImport_OtpParameters();
-      gaip.name = "Example:alice@google.com";
-      gaip.secret = [72, 101, 108, 108, 111, 33, 222, 173, 190, 239];
-      gaip.issuer = "Example";
+      gaip.name = Uri.decodeFull(uri.path.substring(1));
+      //print("name = ${gaip.name}");
+      gaip.secret = _encodeBase32(uri.queryParameters['secret']);
+      //print("issuer = ${uri.queryParameters['issuer']}");
+      gaip.issuer = uri.queryParameters['issuer'];
       gaip.type = GoogleAuthenticatorImport_OtpType.OTP_TYPE_TOTP;
+      gaip.algorithm = GoogleAuthenticatorImport_Algorithm.ALGORITHM_SHA1;
+      gaip.digits = GoogleAuthenticatorImport_DigitCount.DIGIT_COUNT_SIX;
       gai.otpParameters.add(gaip);
+      //print(gaip);
     });
+    gai.version = 1;
+    gai.batchSize = 1;
+    gai.batchIndex = 0;
+    gai.batchId = 790556775;
     final bytes = gai.writeToBuffer();
     return "otpauth-migration://offline?data=${base64.encode(bytes)}";
   }
@@ -50,6 +63,8 @@ class OtpAuthMigration {
       var decoded = base64.decode(encoded);
       final gai = GoogleAuthenticatorImport.fromBuffer(decoded);
 
+      //print(gai);
+
       int i = 0;
       //print(gai.otpParameters.length);
       gai.otpParameters.forEach((param) {
@@ -69,8 +84,93 @@ class OtpAuthMigration {
     }
   }
 
-  List<int> _encodeBase32(String s) {
-    return [];
+  List<int> _encodeBase32(String? s) {
+    int i = 0;
+    var j = 0;
+
+    if(s != null) {
+      Uint8List result = Uint8List((s.length * 5) ~/ 8);
+      while(i < s.length) {
+        // ZERO
+        var c = s[i];
+        var k = rfc3548.indexOf(c);
+        //print(k);
+        result[j] = k << 3;
+        i++;
+
+        c = s[i];
+        k = rfc3548.indexOf(c);
+        //print(k);
+        result[j] = result[j] | (k >> 2);
+
+        //print("---> ${result[j]}");
+        j++;
+
+        // ONE
+        result[j] = k << 6;
+        i++;
+
+        c = s[i];
+        k = rfc3548.indexOf(c);
+        //print(k);
+        result[j] = result[j] | (k << 1);
+        i++;
+
+        c = s[i];
+        k = rfc3548.indexOf(c);
+        //print(k);
+        result[j] = result[j] | (k >> 4);
+
+        //print("---> ${result[j]}");
+        j++;
+
+        // TWO
+        result[j] = k << 4;
+        i++;
+
+        c = s[i];
+        k = rfc3548.indexOf(c);
+        //print(k);
+        result[j] = result[j] | (k >> 1);
+
+        //print("---> ${result[j]}");
+        j++;
+
+        // THREE
+        result[j] = k << 7;
+        i++;
+
+        c = s[i];
+        k = rfc3548.indexOf(c);
+        //print(k);
+        result[j] = result[j] | (k << 2);
+        i++;
+
+        c = s[i];
+        k = rfc3548.indexOf(c);
+        //print(k);
+        result[j] = result[j] | (k >> 3);
+
+        //print("---> ${result[j]}");
+        j++;
+
+        // FOUR
+        result[j] = k << 5;
+        i++;
+
+        c = s[i];
+        k = rfc3548.indexOf(c);
+        //print(k);
+        result[j] = result[j] | k;
+        i++;
+
+        //print("---> ${result[j]}");
+        j++;
+      }
+      //print(result);
+      return result;
+    }
+    return Uint8List(0);
   }
 
   String _decodeBase32(List<int> s) {
