@@ -1,7 +1,7 @@
 name: otpauth_migration
-description: A new Flutter package project.
+description: A Dart package to encode and decode the otpauth-migration URI format used to import into and export 2FA secrets from the Google Authenticator app.
 version: 0.0.1
-homepage:
+repository: https://github.com/johncallahan/otpauth_migration
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
@@ -10,9 +10,10 @@ environment:
 dependencies:
   protobuf: ^1.1.4
   protoc_plugin: ^19.3.1
-  base32: 2.1.1
+  base32: ^2.1.1
   flutter:
     sdk: flutter
+  fixnum: ^0.10.11
 
 dev_dependencies:
   flutter_test:

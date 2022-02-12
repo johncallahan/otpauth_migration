@@ -39,7 +39,8 @@ See additional examples in the `/test` folder.
 
 ## Additional information
 
-* See otpauth_migration_example project
+* See otpauth_migration_example project (TBD)
+* Need more error checking inputs (and associated tests)
 
 ## License
 
