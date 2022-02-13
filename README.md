@@ -3,8 +3,8 @@ A Dart package to encode and decode the otpauth-migration URI format used to imp
 ## Features
 
 * OtpAuthMigration - main class (stateless)
-* String OtpAuthMigration.encode(List<String> uris)
-* List<String> OtpAuthMigration.decode(String uri)
+* String OtpAuthMigration.encode(List\<String\> uris)
+* List\<String\> OtpAuthMigration.decode(String uri)
 
 ## Import
 
@@ -35,6 +35,13 @@ See additional examples in the `/test` folder.
 
 ```shell
 % flutter test
+```
+
+## Example
+
+```shell
+% cd example
+% dart run otpauth_migration_example.dart
 ```
 
 ## Additional information
