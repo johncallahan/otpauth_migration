@@ -21,7 +21,12 @@ class OtpAuthMigration {
       //print("name = ${gaip.name}");
       gaip.secret = _encodeBase32(uri.queryParameters['secret']);
       //print("issuer = ${uri.queryParameters['issuer']}");
-      gaip.issuer = uri.queryParameters['issuer'];
+      var issuer = uri.queryParameters['issuer'];
+      if(issuer != null) {
+        gaip.issuer = issuer;
+      } else {
+        gaip.issuer = "";
+      }
       gaip.type = GoogleAuthenticatorImport_OtpType.OTP_TYPE_TOTP;
       gaip.algorithm = GoogleAuthenticatorImport_Algorithm.ALGORITHM_SHA1;
       gaip.digits = GoogleAuthenticatorImport_DigitCount.DIGIT_COUNT_SIX;

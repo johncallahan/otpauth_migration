@@ -2,9 +2,13 @@
 //  Generated code. Do not modify.
 //  source: GoogleAuthenticatorImport.proto
 //
-// @dart = 2.3
-// ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields,deprecated_member_use_from_same_package
 
+import 'dart:core' as $core;
+import 'dart:convert' as $convert;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use googleAuthenticatorImportDescriptor instead')
 const GoogleAuthenticatorImport$json = const {
   '1': 'GoogleAuthenticatorImport',
   '2': const [
@@ -18,6 +22,7 @@ const GoogleAuthenticatorImport$json = const {
   '4': const [GoogleAuthenticatorImport_Algorithm$json, GoogleAuthenticatorImport_DigitCount$json, GoogleAuthenticatorImport_OtpType$json],
 };
 
+@$core.Deprecated('Use googleAuthenticatorImportDescriptor instead')
 const GoogleAuthenticatorImport_OtpParameters$json = const {
   '1': 'OtpParameters',
   '2': const [
@@ -31,6 +36,7 @@ const GoogleAuthenticatorImport_OtpParameters$json = const {
   ],
 };
 
+@$core.Deprecated('Use googleAuthenticatorImportDescriptor instead')
 const GoogleAuthenticatorImport_Algorithm$json = const {
   '1': 'Algorithm',
   '2': const [
@@ -42,6 +48,7 @@ const GoogleAuthenticatorImport_Algorithm$json = const {
   ],
 };
 
+@$core.Deprecated('Use googleAuthenticatorImportDescriptor instead')
 const GoogleAuthenticatorImport_DigitCount$json = const {
   '1': 'DigitCount',
   '2': const [
@@ -51,6 +58,7 @@ const GoogleAuthenticatorImport_DigitCount$json = const {
   ],
 };
 
+@$core.Deprecated('Use googleAuthenticatorImportDescriptor instead')
 const GoogleAuthenticatorImport_OtpType$json = const {
   '1': 'OtpType',
   '2': const [
@@ -60,3 +68,5 @@ const GoogleAuthenticatorImport_OtpType$json = const {
   ],
 };
 
+/// Descriptor for `GoogleAuthenticatorImport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List googleAuthenticatorImportDescriptor = $convert.base64Decode('ChlHb29nbGVBdXRoZW50aWNhdG9ySW1wb3J0EloKDm90cF9wYXJhbWV0ZXJzGAEgAygLMjMuS2VlUGFzc09UUC5Hb29nbGVBdXRoZW50aWNhdG9ySW1wb3J0Lk90cFBhcmFtZXRlcnNSDW90cFBhcmFtZXRlcnMSGAoHdmVyc2lvbhgCIAEoBVIHdmVyc2lvbhIdCgpiYXRjaF9zaXplGAMgASgFUgliYXRjaFNpemUSHwoLYmF0Y2hfaW5kZXgYBCABKAVSCmJhdGNoSW5kZXgSGQoIYmF0Y2hfaWQYBSABKAVSB2JhdGNoSWQayQIKDU90cFBhcmFtZXRlcnMSFgoGc2VjcmV0GAEgASgMUgZzZWNyZXQSEgoEbmFtZRgCIAEoCVIEbmFtZRIWCgZpc3N1ZXIYAyABKAlSBmlzc3VlchJNCglhbGdvcml0aG0YBCABKA4yLy5LZWVQYXNzT1RQLkdvb2dsZUF1dGhlbnRpY2F0b3JJbXBvcnQuQWxnb3JpdGhtUglhbGdvcml0aG0SSAoGZGlnaXRzGAUgASgOMjAuS2VlUGFzc09UUC5Hb29nbGVBdXRoZW50aWNhdG9ySW1wb3J0LkRpZ2l0Q291bnRSBmRpZ2l0cxJBCgR0eXBlGAYgASgOMi0uS2VlUGFzc09UUC5Hb29nbGVBdXRoZW50aWNhdG9ySW1wb3J0Lk90cFR5cGVSBHR5cGUSGAoHY291bnRlchgHIAEoA1IHY291bnRlciJ5CglBbGdvcml0aG0SGQoVQUxHT1JJVEhNX1VOU1BFQ0lGSUVEEAASEgoOQUxHT1JJVEhNX1NIQTEQARIUChBBTEdPUklUSE1fU0hBMjU2EAISFAoQQUxHT1JJVEhNX1NIQTUxMhADEhEKDUFMR09SSVRITV9NRDUQBCJVCgpEaWdpdENvdW50EhsKF0RJR0lUX0NPVU5UX1VOU1BFQ0lGSUVEEAASEwoPRElHSVRfQ09VTlRfU0lYEAESFQoRRElHSVRfQ09VTlRfRUlHSFQQAiJJCgdPdHBUeXBlEhgKFE9UUF9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNT1RQX1RZUEVfSE9UUBABEhEKDU9UUF9UWVBFX1RPVFAQAg==');

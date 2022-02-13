@@ -49,6 +49,18 @@ See additional examples in the `/test` folder.
 * See otpauth_migration_example project (TBD)
 * Need more error checking inputs (and associated tests)
 
+## Build
+
+```shell
+% protoc -I=./proto --dart_out=lib/generated proto/GoogleAuthenticatorImport.proto
+```
+
+## Publishing
+
+```shell
+% flutter pub publish
+```
+
 ## License
 
 The MIT License (MIT)
