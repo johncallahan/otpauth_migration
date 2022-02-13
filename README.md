@@ -6,6 +6,11 @@ A Dart package to encode and decode the otpauth-migration URI format used to imp
 * String OtpAuthMigration.encode(List\<String\> uris)
 * List\<String\> OtpAuthMigration.decode(String uri)
 
+## Requirements
+
+* Flutter 2.10.1
+* Dart 2.16.1
+
 ## Import
 
 ```dart
@@ -29,7 +34,7 @@ var otp_migration = otp_auth_parser.encode([
   "otpauth-migration://offline?data=CkMKFD3GyqSCSm0oh2eyMx4gtDFmy4XZEhxBQ01FIENvOmpvaG4uZG9lQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCjUKCkhlbGxvId6tvu8SGEV4YW1wbGU6YWxpY2VAZ29vZ2xlLmNvbRoHRXhhbXBsZSABKAEwAhABGAEgACjn4Pv4Ag==");
 ```
 
-See additional examples in the `/test` folder.
+See additional examples in the `/example` folder.
 
 ## Testing
 
@@ -53,6 +58,12 @@ See additional examples in the `/test` folder.
 
 ```shell
 % protoc -I=./proto --dart_out=lib/generated proto/GoogleAuthenticatorImport.proto
+```
+
+## API
+
+```shell
+% dart doc .
 ```
 
 ## Publishing

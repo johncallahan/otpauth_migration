@@ -2,12 +2,11 @@ library otpauth_migration;
 
 import 'dart:convert';
 import 'dart:typed_data';
-import 'package:base32/base32.dart';
 import 'generated/GoogleAuthenticatorImport.pb.dart';
 
 class OtpAuthMigration {
 
-  List<String> rfc3548 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","2","3","4","5","6","7"];
+  List<String> _rfc3548 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","2","3","4","5","6","7"];
 
   String encode(List<String> otpauths) {
     var gai = GoogleAuthenticatorImport();
@@ -55,7 +54,6 @@ class OtpAuthMigration {
 
       //print(gai);
 
-      int i = 0;
       //print(gai.otpParameters.length);
       gai.otpParameters.forEach((param) {
         //print(param);
@@ -83,13 +81,13 @@ class OtpAuthMigration {
       while(i < s.length) {
         // ZERO
         var c = s[i];
-        var k = rfc3548.indexOf(c);
+        var k = _rfc3548.indexOf(c);
         //print(k);
         result[j] = k << 3;
         i++;
 
         c = s[i];
-        k = rfc3548.indexOf(c);
+        k = _rfc3548.indexOf(c);
         //print(k);
         result[j] = result[j] | (k >> 2);
 
@@ -101,13 +99,13 @@ class OtpAuthMigration {
         i++;
 
         c = s[i];
-        k = rfc3548.indexOf(c);
+        k = _rfc3548.indexOf(c);
         //print(k);
         result[j] = result[j] | (k << 1);
         i++;
 
         c = s[i];
-        k = rfc3548.indexOf(c);
+        k = _rfc3548.indexOf(c);
         //print(k);
         result[j] = result[j] | (k >> 4);
 
@@ -119,7 +117,7 @@ class OtpAuthMigration {
         i++;
 
         c = s[i];
-        k = rfc3548.indexOf(c);
+        k = _rfc3548.indexOf(c);
         //print(k);
         result[j] = result[j] | (k >> 1);
 
@@ -131,13 +129,13 @@ class OtpAuthMigration {
         i++;
 
         c = s[i];
-        k = rfc3548.indexOf(c);
+        k = _rfc3548.indexOf(c);
         //print(k);
         result[j] = result[j] | (k << 2);
         i++;
 
         c = s[i];
-        k = rfc3548.indexOf(c);
+        k = _rfc3548.indexOf(c);
         //print(k);
         result[j] = result[j] | (k >> 3);
 
@@ -149,7 +147,7 @@ class OtpAuthMigration {
         i++;
 
         c = s[i];
-        k = rfc3548.indexOf(c);
+        k = _rfc3548.indexOf(c);
         //print(k);
         result[j] = result[j] | k;
         i++;
@@ -172,54 +170,54 @@ class OtpAuthMigration {
     while(i < ulist.length) {
       var q0 = ulist[i] & 0xF8;
       q0 = q0 >> 3;
-      //print(rfc3548[q0]);
-      result += rfc3548[q0];
+      //print(_rfc3548[q0]);
+      result += _rfc3548[q0];
 
       var q1 = ulist[i++] & 0x07;
       q1 = q1 << 2;
       var temp = ulist[i] & 0xC0;
       temp = temp >> 6;
       q1 = q1 + temp;
-      //print(rfc3548[q1]);
-      result += rfc3548[q1];
+      //print(_rfc3548[q1]);
+      result += _rfc3548[q1];
 
       var q2 = ulist[i] & 0x3E;
       q2 = q2 >> 1;
-      //print(rfc3548[q2]);
-      result += rfc3548[q2];
+      //print(_rfc3548[q2]);
+      result += _rfc3548[q2];
 
       var q3 = ulist[i++] & 0x01;
       q3 = q3 << 4;
       temp = ulist[i] & 0xF0;
       temp = temp >> 4;
       q3 = q3 + temp;
-      //print(rfc3548[q3]);
-      result += rfc3548[q3];
+      //print(_rfc3548[q3]);
+      result += _rfc3548[q3];
 
       var q4 = ulist[i++] & 0x0F;
       q4 = q4 << 1;
       temp = ulist[i] & 0x80;
       temp = temp >> 7;
       q4 = q4 + temp;
-      //print(rfc3548[q4]);
-      result += rfc3548[q4];
+      //print(_rfc3548[q4]);
+      result += _rfc3548[q4];
 
       var q5 = ulist[i] & 0x7c;
       q5 = q5 >> 2;
-      //print(rfc3548[q5]);
-      result += rfc3548[q5];
+      //print(_rfc3548[q5]);
+      result += _rfc3548[q5];
 
       var q6 = ulist[i++] & 0x03;
       q6 = q6 << 3;
       temp = ulist[i] & 0xE0;
       temp = temp >> 5;
       q6 = q6 + temp;
-      //print(rfc3548[q6]);
-      result += rfc3548[q6];
+      //print(_rfc3548[q6]);
+      result += _rfc3548[q6];
 
       var q7 = ulist[i++] & 0x1F;
-      //print(rfc3548[q7]);
-      result += rfc3548[q7];
+      //print(_rfc3548[q7]);
+      result += _rfc3548[q7];
 
     }
 
