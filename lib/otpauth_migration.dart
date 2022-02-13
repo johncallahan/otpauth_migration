@@ -7,8 +7,40 @@ import 'generated/GoogleAuthenticatorImport.pb.dart';
 
 /// A stateless class (not a singleton) that provides encode and decode functions for the otpauth-migration URI format used to import into and export 2FA secrets from the Google Authenticator app
 class OtpAuthMigration {
-
-  final List<String> _rfc3548 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","2","3","4","5","6","7"];
+  final List<String> _rfc3548 = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ];
 
   /// encode given list of optauth URIs into a single otpauth-migration URI
   String encode(List<String> otpAuths) {
@@ -24,7 +56,7 @@ class OtpAuthMigration {
       gaip.secret = _encodeBase32(uri.queryParameters['secret']);
       //print("issuer = ${uri.queryParameters['issuer']}");
       var issuer = uri.queryParameters['issuer'];
-      if(issuer != null) {
+      if (issuer != null) {
         gaip.issuer = issuer;
       } else {
         gaip.issuer = "";
@@ -52,7 +84,7 @@ class OtpAuthMigration {
     RegExp exp = RegExp(r"otpauth-migration\:\/\/offline\?data=(.*)$");
     final match = exp.firstMatch(value);
     final encoded = match?.group(1);
-    if(encoded != null) {
+    if (encoded != null) {
       var decoded = base64.decode(encoded);
       final gai = GoogleAuthenticatorImport.fromBuffer(decoded);
 
@@ -80,9 +112,9 @@ class OtpAuthMigration {
     int i = 0;
     var j = 0;
 
-    if(s != null) {
+    if (s != null) {
       Uint8List result = Uint8List((s.length * 5) ~/ 8);
-      while(i < s.length) {
+      while (i < s.length) {
         // ZERO
         var c = s[i];
         var k = _rfc3548.indexOf(c);
@@ -171,7 +203,7 @@ class OtpAuthMigration {
     String result = "";
 
     var i = 0;
-    while(i < ulist.length) {
+    while (i < ulist.length) {
       var q0 = ulist[i] & 0xF8;
       q0 = q0 >> 3;
       //print(_rfc3548[q0]);
@@ -222,11 +254,9 @@ class OtpAuthMigration {
       var q7 = ulist[i++] & 0x1F;
       //print(_rfc3548[q7]);
       result += _rfc3548[q7];
-
     }
 
     //print(result);
     return result;
   }
-
 }
