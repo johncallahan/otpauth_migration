@@ -1,16 +1,19 @@
+/// Provides encode and decode functions for the otpauth-migration URI format used to import into and export 2FA secrets from the Google Authenticator app
 library otpauth_migration;
 
 import 'dart:convert';
 import 'dart:typed_data';
 import 'generated/GoogleAuthenticatorImport.pb.dart';
 
+/// A stateless class (not a singleton) that provides encode and decode functions for the otpauth-migration URI format used to import into and export 2FA secrets from the Google Authenticator app
 class OtpAuthMigration {
 
-  List<String> _rfc3548 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","2","3","4","5","6","7"];
+  final List<String> _rfc3548 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","2","3","4","5","6","7"];
 
-  String encode(List<String> otpauths) {
+  /// encode given list of optauth URIs into a single otpauth-migration URI
+  String encode(List<String> otpAuths) {
     var gai = GoogleAuthenticatorImport();
-    otpauths.forEach((otp) {
+    for (var otp in otpAuths) {
       var uri = Uri.parse(otp);
       //uri.queryParameters.forEach((k, v) {
       //  print('key: $k - value: $v');
@@ -31,7 +34,7 @@ class OtpAuthMigration {
       gaip.digits = GoogleAuthenticatorImport_DigitCount.DIGIT_COUNT_SIX;
       gai.otpParameters.add(gaip);
       //print(gaip);
-    });
+    }
     gai.version = 1;
     gai.batchSize = 1;
     gai.batchIndex = 0;
@@ -40,6 +43,7 @@ class OtpAuthMigration {
     return "otpauth-migration://offline?data=${base64.encode(bytes)}";
   }
 
+  /// decode a given otpauth-migration URI into a list of one or more otpauth URIs
   List<String> decode(String value) {
     // check prefix "otpauth-migration://offline?data="
     // extract suffix - Base64 encode
@@ -55,14 +59,14 @@ class OtpAuthMigration {
       //print(gai);
 
       //print(gai.otpParameters.length);
-      gai.otpParameters.forEach((param) {
+      for (var param in gai.otpParameters) {
         //print(param);
         var base32 = _decodeBase32(param.secret);
         //print("otpauth://totp/${param.name}?secret=${base32}");
         final name = Uri.encodeFull(param.name);
         final issuer = Uri.encodeComponent(param.issuer);
-        results.add("otpauth://totp/${name}?secret=${base32}&issuer=${issuer}");
-      });
+        results.add("otpauth://totp/$name?secret=$base32&issuer=$issuer");
+      }
 
       //print("good");
       return results;
