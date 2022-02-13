@@ -9,7 +9,6 @@ environment:
 
 dependencies:
   protobuf: ^2.0.1
-  protoc_plugin: ^20.0.0
   base32: ^2.1.1
   flutter:
     sdk: flutter
