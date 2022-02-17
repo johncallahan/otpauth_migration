@@ -1,3 +1,5 @@
+[![Pub](https://img.shields.io/pub/v/otpauth_migration.svg)](https://pub.dev/packages/otpauth_migration)
+
 A Dart package to encode and decode the otpauth-migration URI format used to import into and export 2FA secrets from the Google Authenticator app.
 
 ## Features
@@ -41,6 +43,8 @@ See additional examples in the `/example` folder.
 % dart test
 ```
 
+A github action (in .github/workflows/dart.yml) also runs the tests on main branch pushes and PRs
+
 ## Example
 
 ```shell
@@ -53,6 +57,7 @@ See additional examples in the `/example` folder.
 * See otpauth_migration_example project (TBD)
 * Need more error checking inputs (and associated tests)
 * Fix version, batchSize, batchIndex, batchId
+* Add DartCI badge (to show Github Action test results)
 
 ## Build
 
@@ -64,6 +69,13 @@ See additional examples in the `/example` folder.
 
 ```shell
 % dart doc .
+```
+
+## Formatting and analysis
+
+```shell
+% dart analyze
+% dart format .
 ```
 
 ## Publishing
