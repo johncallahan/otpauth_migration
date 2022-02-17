@@ -59,6 +59,7 @@ A github action (in .github/workflows/dart.yml) also runs the tests on main bran
 * Need more error checking inputs (and associated tests)
 * Fix version, batchSize, batchIndex, batchId
 * ~~Add Github Actions badge (to show Github Action test results)~~
+* RFC 3548 description (and diagram)
 
 ## Build
 
