@@ -43,7 +43,7 @@ class OtpAuthMigration {
   ];
 
   /// encode given list of optauth URIs into a single otpauth-migration URI
-  String encode(List<String> otpAuths) {
+  String encode(List<String> otpAuths, { bool debug = false, int version = -1, int batchSize = -1, int batchIndex = -1, int batchId = -1}) {
     var gai = GoogleAuthenticatorImport();
     for (var otp in otpAuths) {
       var uri = Uri.parse(otp);
@@ -53,30 +53,32 @@ class OtpAuthMigration {
       var gaip = GoogleAuthenticatorImport_OtpParameters();
       gaip.name = Uri.decodeFull(uri.path.substring(1));
       //print("name = ${gaip.name}");
-      gaip.secret = _encodeBase32(uri.queryParameters['secret']);
+      try {
+        gaip.secret = _encodeBase32(uri.queryParameters['secret']);
+      } catch(e) {
+        return "";
+      }
       //print("issuer = ${uri.queryParameters['issuer']}");
       var issuer = uri.queryParameters['issuer'];
-      if (issuer != null) {
+      if (issuer != null && issuer != "") {
         gaip.issuer = issuer;
-      } else {
-        gaip.issuer = "";
       }
       gaip.type = GoogleAuthenticatorImport_OtpType.OTP_TYPE_TOTP;
       gaip.algorithm = GoogleAuthenticatorImport_Algorithm.ALGORITHM_SHA1;
       gaip.digits = GoogleAuthenticatorImport_DigitCount.DIGIT_COUNT_SIX;
       gai.otpParameters.add(gaip);
-      //print(gaip);
+      if(debug) print(gaip);
     }
-    gai.version = 1;
-    gai.batchSize = 1;
-    gai.batchIndex = 0;
-    gai.batchId = 790556775;
+    if(version >= 0) gai.version = version;
+    if(batchSize >= 0) gai.batchSize = batchSize;
+    if(batchIndex >= 0) gai.batchIndex = batchIndex;
+    if(batchId >= 0) gai.batchId = batchId;
     final bytes = gai.writeToBuffer();
     return "otpauth-migration://offline?data=${base64.encode(bytes)}";
   }
 
   /// decode a given otpauth-migration URI into a list of one or more otpauth URIs
-  List<String> decode(String value) {
+  List<String> decode(String value, { bool debug = false }) {
     // check prefix "otpauth-migration://offline?data="
     // extract suffix - Base64 encode
     List<String> results = [];
@@ -86,22 +88,28 @@ class OtpAuthMigration {
     final encoded = match?.group(1);
     if (encoded != null) {
       var decoded = base64.decode(encoded);
-      final gai = GoogleAuthenticatorImport.fromBuffer(decoded);
 
-      //print(gai);
+      try {
+        final gai = GoogleAuthenticatorImport.fromBuffer(decoded);
 
-      //print(gai.otpParameters.length);
-      for (var param in gai.otpParameters) {
-        //print(param);
-        var base32 = _decodeBase32(param.secret);
-        //print("otpauth://totp/${param.name}?secret=${base32}");
-        final name = Uri.encodeFull(param.name);
-        final issuer = Uri.encodeComponent(param.issuer);
-        results.add("otpauth://totp/$name?secret=$base32&issuer=$issuer");
+        if(debug) print(gai);
+
+        //print(gai.otpParameters.length);
+        for (var param in gai.otpParameters) {
+          //print(param);
+          var base32 = _decodeBase32(param.secret);
+          //print("otpauth://totp/${param.name}?secret=${base32}");
+          final name = Uri.encodeFull(param.name);
+          final issuer = Uri.encodeComponent(param.issuer);
+          results.add("otpauth://totp/$name?secret=$base32&issuer=$issuer");
+          }
+
+        //print("good");
+        return results;
+      } catch(e) {
+        return results;
       }
 
-      //print("good");
-      return results;
     } else {
       //print("bad");
       return [];

@@ -11,28 +11,28 @@ void main() {
 
     expect(
         otpAuthParser.decode(
+            "otpauth-migration://offline"),
+        []);
+
+    expect(
+        otpAuthParser.decode(
+            "otpauth-migration://offline?data="),
+        []);
+
+    expect(
+        otpAuthParser.decode(
             "otpauth-migration://offline?data=$string1"),
-        list1);
+        []);
 
     expect(
         otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string2"),
-        list2);
+            "otpauth-MIGRATION://offline?data=$string2"),
+        []);
 
     expect(
         otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string3"),
-        list3);
+            string3),
+        []);
 
-    expect(
-        otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string4"),
-        list4);
-
-    expect(
-        otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string5"),
-        list5);
-
-  });
+    });
 }
