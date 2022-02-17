@@ -8,7 +8,6 @@ A Dart package to encode and decode the otpauth-migration URI format used to imp
 
 ## Requirements
 
-* Flutter 2.10.1
 * Dart 2.16.1
 
 ## Import
@@ -39,7 +38,7 @@ See additional examples in the `/example` folder.
 ## Testing
 
 ```shell
-% flutter test
+% dart test
 ```
 
 ## Example
@@ -53,6 +52,7 @@ See additional examples in the `/example` folder.
 
 * See otpauth_migration_example project (TBD)
 * Need more error checking inputs (and associated tests)
+* Fix version, batchSize, batchIndex, batchId
 
 ## Build
 
@@ -69,7 +69,7 @@ See additional examples in the `/example` folder.
 ## Publishing
 
 ```shell
-% flutter pub publish
+% dart pub publish
 ```
 
 ## License
