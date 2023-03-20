@@ -23,13 +23,25 @@ void main() {
 
     expect(otpAuthParser.decode("otpauth-migration://offline?data=$string5"),
         list5);
-
+        
+    expect(otpAuthParser.batchSize("otpauth-migration://offline?data=$string_1_of_3"),
+    	3);
+    expect(otpAuthParser.batchIndex("otpauth-migration://offline?data=$string_1_of_3"),
+    	0);
 	expect(otpAuthParser.decode("otpauth-migration://offline?data=$string_1_of_3"),
 		list_1_of_3);
 	
+	expect(otpAuthParser.batchSize("otpauth-migration://offline?data=$string_2_of_3"),
+    	3);
+    expect(otpAuthParser.batchIndex("otpauth-migration://offline?data=$string_2_of_3"),
+    	1);
 	expect(otpAuthParser.decode("otpauth-migration://offline?data=$string_2_of_3"),
 		list_2_of_3);
 		
+	expect(otpAuthParser.batchSize("otpauth-migration://offline?data=$string_3_of_3"),
+    	3);
+    expect(otpAuthParser.batchIndex("otpauth-migration://offline?data=$string_3_of_3"),
+    	2);
 	expect(otpAuthParser.decode("otpauth-migration://offline?data=$string_3_of_3"),
 		list_3_of_3);
   });

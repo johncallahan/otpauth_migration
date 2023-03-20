@@ -81,6 +81,42 @@ class OtpAuthMigration {
     final bytes = gai.writeToBuffer();
     return "otpauth-migration://offline?data=${base64.encode(bytes)}";
   }
+  
+  int batchSize(String value) {
+  	RegExp exp = RegExp(r"otpauth-migration\:\/\/offline\?data=(.*)$");
+    final match = exp.firstMatch(value);
+    final encoded = match?.group(1);
+    if (encoded != null) {
+      var decoded = base64.decode(encoded);
+
+      try {
+        final gai = GoogleAuthenticatorImport.fromBuffer(decoded);
+        return gai.batchSize;
+      } catch(e) {
+      	return -1;
+      }
+    } else {
+    	return -1;
+    }
+  }
+  
+  int batchIndex(String value) {
+  	RegExp exp = RegExp(r"otpauth-migration\:\/\/offline\?data=(.*)$");
+    final match = exp.firstMatch(value);
+    final encoded = match?.group(1);
+    if (encoded != null) {
+      var decoded = base64.decode(encoded);
+
+      try {
+        final gai = GoogleAuthenticatorImport.fromBuffer(decoded);
+        return gai.batchIndex;
+      } catch(e) {
+      	return -1;
+      }
+    } else {
+    	return -1;
+    }
+  }
 
   /// decode a given otpauth-migration URI into a list of one or more otpauth URIs
   List<String> decode(String value, {bool debug = false}) {
