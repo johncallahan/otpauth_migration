@@ -9,30 +9,28 @@ void main() {
   test('test parsing', () {
     final otpAuthParser = OtpAuthMigration();
 
-    expect(
-        otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string1"),
+    expect(otpAuthParser.decode("otpauth-migration://offline?data=$string1"),
         list1);
 
-    expect(
-        otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string2"),
+    expect(otpAuthParser.decode("otpauth-migration://offline?data=$string2"),
         list2);
 
-    expect(
-        otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string3"),
+    expect(otpAuthParser.decode("otpauth-migration://offline?data=$string3"),
         list3);
 
-    expect(
-        otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string4"),
+    expect(otpAuthParser.decode("otpauth-migration://offline?data=$string4"),
         list4);
 
-    expect(
-        otpAuthParser.decode(
-            "otpauth-migration://offline?data=$string5"),
+    expect(otpAuthParser.decode("otpauth-migration://offline?data=$string5"),
         list5);
 
+	expect(otpAuthParser.decode("otpauth-migration://offline?data=$string_1_of_3"),
+		list_1_of_3);
+	
+	expect(otpAuthParser.decode("otpauth-migration://offline?data=$string_2_of_3"),
+		list_2_of_3);
+		
+	expect(otpAuthParser.decode("otpauth-migration://offline?data=$string_3_of_3"),
+		list_3_of_3);
   });
 }

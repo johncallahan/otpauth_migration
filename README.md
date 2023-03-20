@@ -57,9 +57,11 @@ A github action (in .github/workflows/dart.yml) also runs the tests on main bran
 
 * ~~See otpauth_migration_example project~~
 * Need more error checking inputs (and associated tests)
-* Fix version, batchSize, batchIndex, batchId
+* ~~Fix version, batchSize, batchIndex, batchId~~
+* Add options for type, algorithm, digits (each optParameter)
 * ~~Add Github Actions badge (to show Github Action test results)~~
 * RFC 3548 description (and diagram)
+* Add support for a validation API (i.e., good or bad URI format)
 
 ## Build
 

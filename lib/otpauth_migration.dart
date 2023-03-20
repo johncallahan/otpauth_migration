@@ -43,7 +43,12 @@ class OtpAuthMigration {
   ];
 
   /// encode given list of optauth URIs into a single otpauth-migration URI
-  String encode(List<String> otpAuths, { bool debug = false, int version = -1, int batchSize = -1, int batchIndex = -1, int batchId = -1}) {
+  String encode(List<String> otpAuths,
+      {bool debug = false,
+      int version = -1,
+      int batchSize = -1,
+      int batchIndex = -1,
+      int batchId = -1}) {
     var gai = GoogleAuthenticatorImport();
     for (var otp in otpAuths) {
       var uri = Uri.parse(otp);
@@ -55,7 +60,7 @@ class OtpAuthMigration {
       //print("name = ${gaip.name}");
       try {
         gaip.secret = _encodeBase32(uri.queryParameters['secret']);
-      } catch(e) {
+      } catch (e) {
         return "";
       }
       //print("issuer = ${uri.queryParameters['issuer']}");
@@ -67,18 +72,18 @@ class OtpAuthMigration {
       gaip.algorithm = GoogleAuthenticatorImport_Algorithm.ALGORITHM_SHA1;
       gaip.digits = GoogleAuthenticatorImport_DigitCount.DIGIT_COUNT_SIX;
       gai.otpParameters.add(gaip);
-      if(debug) print(gaip);
+      if (debug) print(gaip);
     }
-    if(version >= 0) gai.version = version;
-    if(batchSize >= 0) gai.batchSize = batchSize;
-    if(batchIndex >= 0) gai.batchIndex = batchIndex;
-    if(batchId >= 0) gai.batchId = batchId;
+    if (version >= 0) gai.version = version;
+    if (batchSize >= 0) gai.batchSize = batchSize;
+    if (batchIndex >= 0) gai.batchIndex = batchIndex;
+    if (batchId >= 0) gai.batchId = batchId;
     final bytes = gai.writeToBuffer();
     return "otpauth-migration://offline?data=${base64.encode(bytes)}";
   }
 
   /// decode a given otpauth-migration URI into a list of one or more otpauth URIs
-  List<String> decode(String value, { bool debug = false }) {
+  List<String> decode(String value, {bool debug = false}) {
     // check prefix "otpauth-migration://offline?data="
     // extract suffix - Base64 encode
     List<String> results = [];
@@ -92,7 +97,7 @@ class OtpAuthMigration {
       try {
         final gai = GoogleAuthenticatorImport.fromBuffer(decoded);
 
-        if(debug) print(gai);
+        if (debug) print(gai);
 
         //print(gai.otpParameters.length);
         for (var param in gai.otpParameters) {
@@ -102,14 +107,13 @@ class OtpAuthMigration {
           final name = Uri.encodeFull(param.name);
           final issuer = Uri.encodeComponent(param.issuer);
           results.add("otpauth://totp/$name?secret=$base32&issuer=$issuer");
-          }
+        }
 
         //print("good");
         return results;
-      } catch(e) {
+      } catch (e) {
         return results;
       }
-
     } else {
       //print("bad");
       return [];

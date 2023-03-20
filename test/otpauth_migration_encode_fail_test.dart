@@ -10,8 +10,6 @@ void main() {
     final otpAuthParser = OtpAuthMigration();
 
     // secret is purposely truncated
-    expect(otpAuthParser.encode(errorList3),
-        errorString3);
-
+    expect(otpAuthParser.encode(errorList3), errorString3);
   });
 }
