@@ -142,7 +142,37 @@ class OtpAuthMigration {
           //print("otpauth://totp/${param.name}?secret=${base32}");
           final name = Uri.encodeFull(param.name);
           final issuer = Uri.encodeComponent(param.issuer);
-          results.add("otpauth://totp/$name?secret=$base32&issuer=$issuer");
+          String algorithm = "";
+          switch(param.algorithm) {
+          case GoogleAuthenticatorImport_Algorithm.ALGORITHM_SHA1:
+          	algorithm = "&algorithm=SHA1";
+          	break;
+          case GoogleAuthenticatorImport_Algorithm.ALGORITHM_SHA256:
+          	algorithm = "&algorithm=SHA256";
+          	break;
+          case GoogleAuthenticatorImport_Algorithm.ALGORITHM_SHA512:
+          	algorithm = "&algorithm=SHA512";
+          	break;
+          case GoogleAuthenticatorImport_Algorithm.ALGORITHM_MD5:
+          	algorithm = "&algorithm=MD5";
+          	break;
+          default:
+          	algorithm = "";
+          	break;
+          }
+          String digits = "";
+          switch(param.digits) {
+          case GoogleAuthenticatorImport_DigitCount.DIGIT_COUNT_SIX:
+          	digits = "&digits=6";
+          	break;
+          case GoogleAuthenticatorImport_DigitCount.DIGIT_COUNT_EIGHT:
+          	digits = "&digits=8";
+          	break;
+          default:
+          	digits = "";
+          	break;
+          }
+          results.add("otpauth://totp/$name?secret=$base32&issuer=$issuer$algorithm$digits&period=30");
         }
 
         //print("good");

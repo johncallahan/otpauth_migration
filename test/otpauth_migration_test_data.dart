@@ -17,30 +17,30 @@ final List<String> list1 = [];
 
 final string2 = "CiMKCskCjMDVZlPV3OQSD015IFRlc3QgQWNjb3VudCABKAEwAhAB";
 final List<String> list2 = [
-  "otpauth://totp/My%20Test%20Account?secret=ZEBIZQGVMZJ5LXHE&issuer="
+  "otpauth://totp/My%20Test%20Account?secret=ZEBIZQGVMZJ5LXHE&issuer=&algorithm=SHA1&digits=6&period=30"
 ];
 
 final string3 =
     "Cj8KFGnEpnTMQ7KDguNWnddyGyCbSVLaEhhBQ01FIENvOmpvaG5AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKRAoUXkj+5MY2arwKjsnH2aDsbm6TAlYSG0JldGEgTHRkLjpob21lckBleGFtcGxlLmNvbRoJQmV0YSBMdGQuIAEoATACCkgKFDDFyzUNPgYoI3q/KGHBdcNU9ptWEh1DYXRzICYgRG9nczptYXJnZUBleGFtcGxlLmNvbRoLQ2F0cyAmIERvZ3MgASgBMAIKSAoUunHzbm5h/LUO0yilLMI+dYZY1eISHURhaWx5IEJ1Z2xlOnBldGVyQGV4YW1wbGUuY29tGgtEYWlseSBCdWdsZSABKAEwAhABGAEgACjDnb+uAg==";
 final List<String> list3 = [
-  'otpauth://totp/ACME%20Co:john@example.com?secret=NHCKM5GMIOZIHAXDK2O5O4Q3ECNUSUW2&issuer=ACME%20Co',
-  'otpauth://totp/Beta%20Ltd.:homer@example.com?secret=LZEP5ZGGGZVLYCUOZHD5TIHMNZXJGASW&issuer=Beta%20Ltd.',
-  'otpauth://totp/Cats%20&%20Dogs:marge@example.com?secret=GDC4WNINHYDCQI32X4UGDQLVYNKPNG2W&issuer=Cats%20%26%20Dogs',
-  'otpauth://totp/Daily%20Bugle:peter@example.com?secret=XJY7G3TOMH6LKDWTFCSSZQR6OWDFRVPC&issuer=Daily%20Bugle'
+  'otpauth://totp/ACME%20Co:john@example.com?secret=NHCKM5GMIOZIHAXDK2O5O4Q3ECNUSUW2&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30',
+  'otpauth://totp/Beta%20Ltd.:homer@example.com?secret=LZEP5ZGGGZVLYCUOZHD5TIHMNZXJGASW&issuer=Beta%20Ltd.&algorithm=SHA1&digits=6&period=30',
+  'otpauth://totp/Cats%20&%20Dogs:marge@example.com?secret=GDC4WNINHYDCQI32X4UGDQLVYNKPNG2W&issuer=Cats%20%26%20Dogs&algorithm=SHA1&digits=6&period=30',
+  'otpauth://totp/Daily%20Bugle:peter@example.com?secret=XJY7G3TOMH6LKDWTFCSSZQR6OWDFRVPC&issuer=Daily%20Bugle&algorithm=SHA1&digits=6&period=30'
 ];
 
 final string4 =
     "CkMKFD3GyqSCSm0oh2eyMx4gtDFmy4XZEhxBQ01FIENvOmpvaG4uZG9lQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCjUKCkhlbGxvId6tvu8SGEV4YW1wbGU6YWxpY2VAZ29vZ2xlLmNvbRoHRXhhbXBsZSABKAEwAhABGAAgACjn4Pv4Ag==";
 final List<String> list4 = [
-  "otpauth://totp/ACME%20Co:john.doe@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co",
-  "otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example"
+  "otpauth://totp/ACME%20Co:john.doe@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30",
+  "otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example&algorithm=SHA1&digits=6&period=30"
 ];
 
 final string5 =
     "Cj8KFGnEpnTMQ7KDguNWnddyGyCbSVLaEhhBQ01FIENvOmpvaG5AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKSAoUunHzbm5h/LUO0yilLMI+dYZY1eISHURhaWx5IEJ1Z2xlOnBldGVyQGV4YW1wbGUuY29tGgtEYWlseSBCdWdsZSABKAEwAhABGAEgACibg+3JBg==";
 final List<String> list5 = [
-  'otpauth://totp/ACME%20Co:john@example.com?secret=NHCKM5GMIOZIHAXDK2O5O4Q3ECNUSUW2&issuer=ACME%20Co',
-  'otpauth://totp/Daily%20Bugle:peter@example.com?secret=XJY7G3TOMH6LKDWTFCSSZQR6OWDFRVPC&issuer=Daily%20Bugle'
+  'otpauth://totp/ACME%20Co:john@example.com?secret=NHCKM5GMIOZIHAXDK2O5O4Q3ECNUSUW2&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30',
+  'otpauth://totp/Daily%20Bugle:peter@example.com?secret=XJY7G3TOMH6LKDWTFCSSZQR6OWDFRVPC&issuer=Daily%20Bugle&algorithm=SHA1&digits=6&period=30'
 ];
 
 final string6 = 
@@ -70,40 +70,55 @@ final List<String> list6 = [
   'otpauth://totp/ACME%20Co:twenty-two@example.com?secret=FFENYGUHJHYP43AS5ZVCALD65BMUJ4EU&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30'
 ];
 
-final string_1_of_3_urlencoded = "otpauth-migration://offline?data=Cj4KFFS3tvQDzRY9vNPoeRzzuA%2Bx%2F8%2BAEhdBQ01FIENvOm9uZUBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgo%2BChSdJX81nDl6jQCXs6YAs%2FkXpQ3sqxIXQUNNRSBDbzp0d29AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKQAoU%2FE0%2FIdJp5KqVjLANrQuQ%2B2gdM0ISGUFDTUUgQ286dGhyZWVAZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKPwoUwNjF66nPo7tSo9xRNrltA8M%2B91YSGEFDTUUgQ286Zm91ckBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgo%2FChSIiQej5jKBpU2tyF4itlHV48uoDBIYQUNNRSBDbzpmaXZlQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCj4KFFaQglHdqtBv9rr6MxP%2B81ezsidMEhdBQ01FIENvOnNpeEBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpAChQlMtfqcmYplGB9jjrq0%2B%2Fc7E7cjxIZQUNNRSBDbzpzZXZlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpAChR0zL2jH0qCOXPCUQQS%2BXb0gDgREBIZQUNNRSBDbzplaWdodEBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgo%2FChQRNlo4cDDUfVoYXaVokry5JjR%2BaRIYQUNNRSBDbzpuaW5lQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCj4KFAjYH6s6cuUghVDB22zYPNLFrcTXEhdBQ01FIENvOnRlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAhABGAMgACjU746P%2B%2F%2F%2F%2F%2F8B";
-final string_1_of_3 = "Cj4KFFS3tvQDzRY9vNPoeRzzuA+x/8+AEhdBQ01FIENvOm9uZUBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgo+ChSdJX81nDl6jQCXs6YAs/kXpQ3sqxIXQUNNRSBDbzp0d29AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKQAoU/E0/IdJp5KqVjLANrQuQ+2gdM0ISGUFDTUUgQ286dGhyZWVAZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKPwoUwNjF66nPo7tSo9xRNrltA8M+91YSGEFDTUUgQ286Zm91ckBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgo/ChSIiQej5jKBpU2tyF4itlHV48uoDBIYQUNNRSBDbzpmaXZlQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCj4KFFaQglHdqtBv9rr6MxP+81ezsidMEhdBQ01FIENvOnNpeEBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpAChQlMtfqcmYplGB9jjrq0+/c7E7cjxIZQUNNRSBDbzpzZXZlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpAChR0zL2jH0qCOXPCUQQS+Xb0gDgREBIZQUNNRSBDbzplaWdodEBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgo/ChQRNlo4cDDUfVoYXaVokry5JjR+aRIYQUNNRSBDbzpuaW5lQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCj4KFAjYH6s6cuUghVDB22zYPNLFrcTXEhdBQ01FIENvOnRlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAhABGAMgACjU746P+/////8B";
+final string_1_of_3_urlencoded = "otpauth-migration://offline?data=CjgKFEAMt6taggt2RMlyOqc%2FgKq4rLAdEhRBQ01FOm9uZUBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo4ChT2aPztshguMytZeJ7mD5gmjwJrlhIUQUNNRTp0d29AZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKOgoUNT2RciBQftSX5pYbnfYyeQmte8wSFkFDTUU6dGhyZWVAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKOQoUd2SPY9F%2BYOZ0kchIO6I0FiVe6SYSFUFDTUU6Zm91ckBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo5ChRGVdxYupF5A3VN1FvCB7KOFHJMEBIVQUNNRTpmaXZlQGV4YW1wbGUuY29tGgRBQ01FIAEoATACCjgKFPW7LtgHn%2Fo4s1UAvmwb%2FBDMSxOhEhRBQ01FOnNpeEBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo6ChQ%2BWpi%2BlKrk%2FDlTh7D3oD21yPi2IhIWQUNNRTpzZXZlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo6ChSmPi4DpijhO49AE3VlsP9rBCgKvhIWQUNNRTplaWdodEBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo5ChTDJbVsyBwYtzVPvx7EjAEYQH%2BNHRIVQUNNRTpuaW5lQGV4YW1wbGUuY29tGgRBQ01FIAEoATACCjgKFIe1FhE2wfYShI3ZTcgyqP%2BOiIM%2BEhRBQ01FOnRlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAhABGAMgACjYkYF4";
+final string_1_of_3 = "CjgKFEAMt6taggt2RMlyOqc/gKq4rLAdEhRBQ01FOm9uZUBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo4ChT2aPztshguMytZeJ7mD5gmjwJrlhIUQUNNRTp0d29AZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKOgoUNT2RciBQftSX5pYbnfYyeQmte8wSFkFDTUU6dGhyZWVAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKOQoUd2SPY9F+YOZ0kchIO6I0FiVe6SYSFUFDTUU6Zm91ckBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo5ChRGVdxYupF5A3VN1FvCB7KOFHJMEBIVQUNNRTpmaXZlQGV4YW1wbGUuY29tGgRBQ01FIAEoATACCjgKFPW7LtgHn/o4s1UAvmwb/BDMSxOhEhRBQ01FOnNpeEBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo6ChQ+Wpi+lKrk/DlTh7D3oD21yPi2IhIWQUNNRTpzZXZlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo6ChSmPi4DpijhO49AE3VlsP9rBCgKvhIWQUNNRTplaWdodEBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo5ChTDJbVsyBwYtzVPvx7EjAEYQH+NHRIVQUNNRTpuaW5lQGV4YW1wbGUuY29tGgRBQ01FIAEoATACCjgKFIe1FhE2wfYShI3ZTcgyqP+OiIM+EhRBQ01FOnRlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAhABGAMgACjYkYF4";
 final List<String> list_1_of_3 = [
-	'otpauth://totp/ACME%20Co:one@example.com?secret=KS33N5ADZULD3PGT5B4RZ45YB6Y77T4A&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:two@example.com?secret=TUSX6NM4HF5I2AEXWOTABM7ZC6SQ33FL&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:three@example.com?secret=7RGT6IOSNHSKVFMMWAG22C4Q7NUB2M2C&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:four@example.com?secret=YDMML25JZ6R3WUVD3RITNOLNAPBT552W&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:five@example.com?secret=RCEQPI7GGKA2KTNNZBPCFNSR2XR4XKAM&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:six@example.com?secret=K2IIEUO5VLIG75V27IZRH7XTK6Z3EJ2M&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:seven@example.com?secret=EUZNP2TSMYUZIYD5RY5OVU7P3TWE5XEP&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:eight@example.com?secret=OTGL3IY7JKBDS46CKECBF6LW6SADQEIQ&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:nine@example.com?secret=CE3FUODQGDKH2WQYLWSWREV4XETDI7TJ&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:ten@example.com?secret=BDMB7KZ2OLSSBBKQYHNWZWB42LC23RGX&issuer=ACME%20Co'
+'otpauth://totp/ACME:one@example.com?secret=IAGLPK22QIFXMRGJOI5KOP4AVK4KZMA5&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:two@example.com?secret=6ZUPZ3NSDAXDGK2ZPCPOMD4YE2HQE24W&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:three@example.com?secret=GU6ZC4RAKB7NJF7GSYNZ35RSPEE2266M&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:four@example.com?secret=O5SI6Y6RPZQOM5ERZBEDXIRUCYSV52JG&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:five@example.com?secret=IZK5YWF2SF4QG5KN2RN4EB5SRYKHETAQ&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:six@example.com?secret=6W5S5WAHT75DRM2VAC7GYG74CDGEWE5B&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:seven@example.com?secret=HZNJRPUUVLSPYOKTQ6YPPIB5WXEPRNRC&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:eight@example.com?secret=UY7C4A5GFDQTXD2ACN2WLMH7NMCCQCV6&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:nine@example.com?secret=YMS3K3GIDQMLONKPX4PMJDABDBAH7DI5&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:ten@example.com?secret=Q62RMEJWYH3BFBEN3FG4QMVI76HIRAZ6&issuer=ACME&algorithm=SHA1&digits=6&period=30'
 ];
 
-final string_2_of_3_urlencoded = "otpauth-migration://offline?data=CkEKFPb5QZi%2F%2FoODtjkDPEVODAo5jUtGEhpBQ01FIENvOmVsZXZlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpBChR3Eimj4wjpdTOHiciknZ9o9oCEaBIaQUNNRSBDbzp0d2VsdmVAZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKQwoUrc8bOp1gF0sZo%2BJd9xAWPBR5ITASHEFDTUUgQ286dGhpcnRlZW5AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKQwoUEPH6ds1b6HfIOQC4z5RkAqY1JRoSHEFDTUUgQ286Zm91cnRlZW5AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKQgoUE6wZ9q%2FIcz01zTf32kcvSVQZkR4SG0FDTUUgQ286ZmlmdGVlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpCChQNEj8qg1dscE5JE309kQh6oKwW7xIbQUNNRSBDbzpzaXh0ZWVuQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCkQKFM%2Fdzk7%2BPIDy0Ya0luwyCcdXV7ibEh1BQ01FIENvOnNldmVudGVlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpDChRTtn%2BUOOLS563Ttm8QmWEoOfMFUBIcQUNNRSBDbzplaWdodGVlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpDChQQZnpODUx2ipYBccHpwgbuKEZKKBIcQUNNRSBDbzpuaW5ldGVlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpBChQmAvNLp%2FwL4jQnWVIq%2FXxBMB1MCxIaQUNNRSBDbzp0d2VudHlAZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIQARgDIAEo1O%2BOj%2Fv%2F%2F%2F%2F%2FAQ%3D%3D";
-final string_2_of_3 = "CkEKFPb5QZi//oODtjkDPEVODAo5jUtGEhpBQ01FIENvOmVsZXZlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpBChR3Eimj4wjpdTOHiciknZ9o9oCEaBIaQUNNRSBDbzp0d2VsdmVAZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKQwoUrc8bOp1gF0sZo+Jd9xAWPBR5ITASHEFDTUUgQ286dGhpcnRlZW5AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKQwoUEPH6ds1b6HfIOQC4z5RkAqY1JRoSHEFDTUUgQ286Zm91cnRlZW5AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKQgoUE6wZ9q/Icz01zTf32kcvSVQZkR4SG0FDTUUgQ286ZmlmdGVlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpCChQNEj8qg1dscE5JE309kQh6oKwW7xIbQUNNRSBDbzpzaXh0ZWVuQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCkQKFM/dzk7+PIDy0Ya0luwyCcdXV7ibEh1BQ01FIENvOnNldmVudGVlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpDChRTtn+UOOLS563Ttm8QmWEoOfMFUBIcQUNNRSBDbzplaWdodGVlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpDChQQZnpODUx2ipYBccHpwgbuKEZKKBIcQUNNRSBDbzpuaW5ldGVlbkBleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAgpBChQmAvNLp/wL4jQnWVIq/XxBMB1MCxIaQUNNRSBDbzp0d2VudHlAZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIQARgDIAEo1O+Oj/v/////AQ==";
+final string_2_of_3_urlencoded = "otpauth-migration://offline?data=CjsKFJnXM4qkFXGvKXG99Yip3Y%2Bwu22%2BEhdBQ01FOmVsZXZlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo7ChQILfKeHrURHnbgBlb3%2Bih5nIbNMRIXQUNNRTp0d2VsdmVAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPQoUGbmHd%2BJGX%2BJeFXtvoQEDPCtZtfgSGUFDTUU6dGhpcnRlZW5AZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPQoUS43ZC59C0jnhiCRSRC4wsUkgIFkSGUFDTUU6Zm91cnRlZW5AZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPAoUDXHDXptDHG48ffDX470wX8QfPokSGEFDTUU6ZmlmdGVlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo8ChRAOkNzc9Jk30qQCRTMDYdtQo26cxIYQUNNRTpzaXh0ZWVuQGV4YW1wbGUuY29tGgRBQ01FIAEoATACCj4KFEGT6fvPwMT6qJXUXk9NA1Cp3tIzEhpBQ01FOnNldmVudGVlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo9ChTDzFdCAvpLzPZ%2F0vZEMhQXqh7mZxIZQUNNRTplaWdodGVlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo9ChSMR9YASr0LLX%2BVspWlIXnkTIDzzRIZQUNNRTpuaW5ldGVlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo7ChSRv%2Fqs7BwtQ5vyYbHxhXM8I3K8YRIXQUNNRTp0d2VudHlAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIQARgDIAEo2JGBeA%3D%3D";
+final string_2_of_3 = "CjsKFJnXM4qkFXGvKXG99Yip3Y+wu22+EhdBQ01FOmVsZXZlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo7ChQILfKeHrURHnbgBlb3+ih5nIbNMRIXQUNNRTp0d2VsdmVAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPQoUGbmHd+JGX+JeFXtvoQEDPCtZtfgSGUFDTUU6dGhpcnRlZW5AZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPQoUS43ZC59C0jnhiCRSRC4wsUkgIFkSGUFDTUU6Zm91cnRlZW5AZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPAoUDXHDXptDHG48ffDX470wX8QfPokSGEFDTUU6ZmlmdGVlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo8ChRAOkNzc9Jk30qQCRTMDYdtQo26cxIYQUNNRTpzaXh0ZWVuQGV4YW1wbGUuY29tGgRBQ01FIAEoATACCj4KFEGT6fvPwMT6qJXUXk9NA1Cp3tIzEhpBQ01FOnNldmVudGVlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo9ChTDzFdCAvpLzPZ/0vZEMhQXqh7mZxIZQUNNRTplaWdodGVlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo9ChSMR9YASr0LLX+VspWlIXnkTIDzzRIZQUNNRTpuaW5ldGVlbkBleGFtcGxlLmNvbRoEQUNNRSABKAEwAgo7ChSRv/qs7BwtQ5vyYbHxhXM8I3K8YRIXQUNNRTp0d2VudHlAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIQARgDIAEo2JGBeA==";
 final List<String> list_2_of_3 = [
-	'otpauth://totp/ACME%20Co:eleven@example.com?secret=634UDGF772BYHNRZAM6EKTQMBI4Y2S2G&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:twelve@example.com?secret=O4JCTI7DBDUXKM4HRHEKJHM7ND3IBBDI&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:thirteen@example.com?secret=VXHRWOU5MALUWGND4JO7OEAWHQKHSIJQ&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:fourteen@example.com?secret=CDY7U5WNLPUHPSBZAC4M7FDEAKTDKJI2&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:fifteen@example.com?secret=COWBT5VPZBZT2NONG735URZPJFKBTEI6&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:sixteen@example.com?secret=BUJD6KUDK5WHATSJCN6T3EIIPKQKYFXP&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:seventeen@example.com?secret=Z7O44TX6HSAPFUMGWSLOYMQJY5LVPOE3&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:eighteen@example.com?secret=KO3H7FBY4LJOPLOTWZXRBGLBFA47GBKQ&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:nineteen@example.com?secret=CBTHUTQNJR3IVFQBOHA6TQQG5YUEMSRI&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:twenty@example.com?secret=EYBPGS5H7QF6ENBHLFJCV7L4IEYB2TAL&issuer=ACME%20Co'
+'otpauth://totp/ACME:eleven@example.com?secret=THLTHCVECVY26KLRXX2YRKO5R6YLW3N6&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:twelve@example.com?secret=BAW7FHQ6WUIR45XAAZLPP6RIPGOINTJR&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:thirteen@example.com?secret=DG4YO57CIZP6EXQVPNX2CAIDHQVVTNPY&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:fourteen@example.com?secret=JOG5SC47ILJDTYMIERJEILRQWFESAICZ&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:fifteen@example.com?secret=BVY4GXU3IMOG4PD56DL6HPJQL7CB6PUJ&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:sixteen@example.com?secret=IA5EG43T2JSN6SUQBEKMYDMHNVBI3OTT&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:seventeen@example.com?secret=IGJ6T66PYDCPVKEV2RPE6TIDKCU55URT&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:eighteen@example.com?secret=YPGFOQQC7JF4Z5T72L3EIMQUC6VB5ZTH&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:nineteen@example.com?secret=RRD5MACKXUFS274VWKK2KILZ4RGIB46N&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:twenty@example.com?secret=SG77VLHMDQWUHG7SMGY7DBLTHQRXFPDB&issuer=ACME&algorithm=SHA1&digits=6&period=30'
 ];
 
-final string_3_of_3_urlencoded = "otpauth-migration://offline?data=CkUKFA99qTIEqpREJARkBu2%2Bp6QdjQlzEh5BQ01FIENvOnR3ZW50eS1vbmVAZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKRQoUVKPn9Eg5RXRlVy6W6GrEwwx%2F7i8SHkFDTUUgQ286dHdlbnR5LXR3b0BleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAhABGAMgAijU746P%2B%2F%2F%2F%2F%2F8B";
-final string_3_of_3 = "CkUKFA99qTIEqpREJARkBu2+p6QdjQlzEh5BQ01FIENvOnR3ZW50eS1vbmVAZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKRQoUVKPn9Eg5RXRlVy6W6GrEwwx/7i8SHkFDTUUgQ286dHdlbnR5LXR3b0BleGFtcGxlLmNvbRoHQUNNRSBDbyABKAEwAhABGAMgAijU746P+/////8B";
+final string_3_of_3_urlencoded = "otpauth-migration://offline?data=Cj8KFG423VA%2BmkFuqplxC%2BfgO%2BASoafzEhtBQ01FOnR3ZW50eS1vbmVAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPwoUZ5RKVxJWL7P5RcYBhy5tQL80ycISG0FDTUU6dHdlbnR5LXR3b0BleGFtcGxlLmNvbRoEQUNNRSABKAEwAhABGAMgAijYkYF4";
+final string_3_of_3 = "Cj8KFG423VA+mkFuqplxC+fgO+ASoafzEhtBQ01FOnR3ZW50eS1vbmVAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPwoUZ5RKVxJWL7P5RcYBhy5tQL80ycISG0FDTUU6dHdlbnR5LXR3b0BleGFtcGxlLmNvbRoEQUNNRSABKAEwAhABGAMgAijYkYF4";
 final List<String> list_3_of_3 = [
-	'otpauth://totp/ACME%20Co:twenty-one@example.com?secret=B562SMQEVKKEIJAEMQDO3PVHUQOY2CLT&issuer=ACME%20Co',
-	'otpauth://totp/ACME%20Co:twenty-two@example.com?secret=KSR6P5CIHFCXIZKXF2LOQ2WEYMGH73RP&issuer=ACME%20Co'
+'otpauth://totp/ACME:twenty-one@example.com?secret=NY3N2UB6TJAW5KUZOEF6PYB34AJKDJ7T&issuer=ACME&algorithm=SHA1&digits=6&period=30',
+'otpauth://totp/ACME:twenty-two@example.com?secret=M6KEUVYSKYX3H6KFYYAYOLTNIC7TJSOC&issuer=ACME&algorithm=SHA1&digits=6&period=30'
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
