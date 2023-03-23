@@ -85,8 +85,9 @@ class OtpAuthMigration {
   int batchSize(String value) {
   	RegExp exp = RegExp(r"otpauth-migration\:\/\/offline\?data=(.*)$");
     final match = exp.firstMatch(value);
-    final encoded = match?.group(1);
-    if (encoded != null) {
+    final encodedUrl = match?.group(1);
+    if (encodedUrl != null) {
+      final encoded = Uri.decodeComponent(encodedUrl);
       var decoded = base64.decode(encoded);
 
       try {
@@ -103,8 +104,9 @@ class OtpAuthMigration {
   int batchIndex(String value) {
   	RegExp exp = RegExp(r"otpauth-migration\:\/\/offline\?data=(.*)$");
     final match = exp.firstMatch(value);
-    final encoded = match?.group(1);
-    if (encoded != null) {
+    final encodedUrl = match?.group(1);
+    if (encodedUrl != null) {
+      final encoded = Uri.decodeComponent(encodedUrl);
       var decoded = base64.decode(encoded);
 
       try {
@@ -126,8 +128,9 @@ class OtpAuthMigration {
 
     RegExp exp = RegExp(r"otpauth-migration\:\/\/offline\?data=(.*)$");
     final match = exp.firstMatch(value);
-    final encoded = match?.group(1);
-    if (encoded != null) {
+    final encodedUrl = match?.group(1);
+    if (encodedUrl != null) {
+      final encoded = Uri.decodeComponent(encodedUrl);
       var decoded = base64.decode(encoded);
 
       try {
