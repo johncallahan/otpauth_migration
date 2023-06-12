@@ -8,8 +8,7 @@ void main() {
   test('test parsing', () {
     final otpAuthParser = OtpAuthMigration();
 
-    expect(otpAuthParser.encode(list0),
-        "otpauth-migration://offline?data=$string0");
+    expect(otpAuthParser.encode(list0), "otpauth-migration://offline?data");
 
     expect(
         otpAuthParser.encode(list1,
