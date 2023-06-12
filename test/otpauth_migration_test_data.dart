@@ -4,7 +4,8 @@ final errorList1 = [];
 final errorString2 = "";
 final errorList2 = [];
 
-final errorString3 = "";
+final errorString3 =
+    "otpauth-migration://offline?data=CjEKBkhlbGxvIRIYRXhhbXBsZTphbGljZUBnb29nbGUuY29tGgdFeGFtcGxlIAEoATAC";
 final errorList3 = [
   "otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEH&issuer=Example"
 ];

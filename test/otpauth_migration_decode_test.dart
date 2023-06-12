@@ -71,4 +71,14 @@ void main() {
     expect(otpAuthParser.batchIndex(string_3_of_3_urlencoded), 2);
     expect(otpAuthParser.decode(string_3_of_3_urlencoded), list_3_of_3);
   });
+  test('test google authenticator export', () {
+    final otpAuthParser = OtpAuthMigration();
+    expect(
+        otpAuthParser.decode(
+            'otpauth-migration://offline?data=ChcKCRyKCQygkMoJFBIEdGVzdCABKAEwAhABGAEgACiTqI3MBw%3D%3D',
+            debug: true),
+        [
+          'otpauth://totp/test?secret=DSFASDFASDFASFA=&issuer=&algorithm=SHA1&digits=6&period=30',
+        ]);
+  });
 }
