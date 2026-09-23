@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:test/test.dart';
 
 import 'package:otpauth_migration/otpauth_migration.dart';
@@ -9,8 +8,7 @@ void main() {
   test('test parsing', () {
     final otpAuthParser = OtpAuthMigration();
 
-    expect(otpAuthParser.encode(list0),
-        "otpauth-migration://offline?data=$string0");
+    expect(otpAuthParser.encode(list0), "otpauth-migration://offline?data");
 
     expect(
         otpAuthParser.encode(list1,
@@ -34,7 +32,7 @@ void main() {
         otpAuthParser.encode(list5,
             version: 1, batchSize: 1, batchIndex: 0, batchId: 1765491099),
         "otpauth-migration://offline?data=$string5");
-        
+
     expect(
         otpAuthParser.encode(list6,
             version: 1, batchSize: 1, batchIndex: 0, batchId: 1765491099),

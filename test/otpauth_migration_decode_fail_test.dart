@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:test/test.dart';
 
 import 'package:otpauth_migration/otpauth_migration.dart';
@@ -16,9 +15,10 @@ void main() {
     expect(
         otpAuthParser.decode("otpauth-migration://offline?data=$string1"), []);
 
-    expect(
-        otpAuthParser.decode("otpauth-MIGRATION://offline?data=$string2"), []);
+    // scheme is not case sensitive.
+    expect(otpAuthParser.decode("otpauth-MIGRATION://offline?data=$string2"),
+        list2);
 
-    expect(otpAuthParser.decode(string3), []);
+    expect(() => otpAuthParser.decode(string3), throwsArgumentError);
   });
 }
