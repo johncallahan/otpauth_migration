@@ -24,52 +24,46 @@ void main() {
         list5);
 
     expect(
-        otpAuthParser
-            .batchSize("otpauth-migration://offline?data=$string_1_of_3"),
+        otpAuthParser.batchSize("otpauth-migration://offline?data=$string1Of3"),
         3);
     expect(
         otpAuthParser
-            .batchIndex("otpauth-migration://offline?data=$string_1_of_3"),
+            .batchIndex("otpauth-migration://offline?data=$string1Of3"),
         0);
-    expect(
-        otpAuthParser.decode("otpauth-migration://offline?data=$string_1_of_3"),
-        list_1_of_3);
+    expect(otpAuthParser.decode("otpauth-migration://offline?data=$string1Of3"),
+        list1Of3);
 
-    expect(otpAuthParser.batchSize(string_1_of_3_urlencoded), 3);
-    expect(otpAuthParser.batchIndex(string_1_of_3_urlencoded), 0);
-    expect(otpAuthParser.decode(string_1_of_3_urlencoded), list_1_of_3);
+    expect(otpAuthParser.batchSize(string1Of3UrlEncoded), 3);
+    expect(otpAuthParser.batchIndex(string1Of3UrlEncoded), 0);
+    expect(otpAuthParser.decode(string1Of3UrlEncoded), list1Of3);
 
     expect(
-        otpAuthParser
-            .batchSize("otpauth-migration://offline?data=$string_2_of_3"),
+        otpAuthParser.batchSize("otpauth-migration://offline?data=$string2Of3"),
         3);
     expect(
         otpAuthParser
-            .batchIndex("otpauth-migration://offline?data=$string_2_of_3"),
+            .batchIndex("otpauth-migration://offline?data=$string2Of3"),
         1);
-    expect(
-        otpAuthParser.decode("otpauth-migration://offline?data=$string_2_of_3"),
-        list_2_of_3);
+    expect(otpAuthParser.decode("otpauth-migration://offline?data=$string2Of3"),
+        list2Of3);
 
-    expect(otpAuthParser.batchSize(string_2_of_3_urlencoded), 3);
-    expect(otpAuthParser.batchIndex(string_2_of_3_urlencoded), 1);
-    expect(otpAuthParser.decode(string_2_of_3_urlencoded), list_2_of_3);
+    expect(otpAuthParser.batchSize(string2Of3UrlEncoded), 3);
+    expect(otpAuthParser.batchIndex(string2Of3UrlEncoded), 1);
+    expect(otpAuthParser.decode(string2Of3UrlEncoded), list2Of3);
 
     expect(
-        otpAuthParser
-            .batchSize("otpauth-migration://offline?data=$string_3_of_3"),
+        otpAuthParser.batchSize("otpauth-migration://offline?data=$string3Of3"),
         3);
     expect(
         otpAuthParser
-            .batchIndex("otpauth-migration://offline?data=$string_3_of_3"),
+            .batchIndex("otpauth-migration://offline?data=$string3Of3"),
         2);
-    expect(
-        otpAuthParser.decode("otpauth-migration://offline?data=$string_3_of_3"),
-        list_3_of_3);
+    expect(otpAuthParser.decode("otpauth-migration://offline?data=$string3Of3"),
+        list3Of3);
 
-    expect(otpAuthParser.batchSize(string_3_of_3_urlencoded), 3);
-    expect(otpAuthParser.batchIndex(string_3_of_3_urlencoded), 2);
-    expect(otpAuthParser.decode(string_3_of_3_urlencoded), list_3_of_3);
+    expect(otpAuthParser.batchSize(string3Of3UrlEncoded), 3);
+    expect(otpAuthParser.batchIndex(string3Of3UrlEncoded), 2);
+    expect(otpAuthParser.decode(string3Of3UrlEncoded), list3Of3);
   });
   test('test google authenticator export', () {
     final otpAuthParser = OtpAuthMigration();
