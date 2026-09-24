@@ -7,7 +7,7 @@ final errorList2 = [];
 final errorString3 =
     "otpauth-migration://offline?data=CjEKBkhlbGxvIRIYRXhhbXBsZTphbGljZUBnb29nbGUuY29tGgdFeGFtcGxlIAEoATAC";
 final errorList3 = [
-  "otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEH&issuer=Example"
+  "otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEH&issuer=Example",
 ];
 
 final string0 = "";
@@ -18,7 +18,7 @@ final List<String> list1 = [];
 
 final string2 = "CiMKCskCjMDVZlPV3OQSD015IFRlc3QgQWNjb3VudCABKAEwAhAB";
 final List<String> list2 = [
-  "otpauth://totp/My%20Test%20Account?secret=ZEBIZQGVMZJ5LXHE&issuer=&algorithm=SHA1&digits=6&period=30"
+  "otpauth://totp/My%20Test%20Account?secret=ZEBIZQGVMZJ5LXHE&issuer=&algorithm=SHA1&digits=6&period=30",
 ];
 
 final string3 =
@@ -27,21 +27,21 @@ final List<String> list3 = [
   'otpauth://totp/ACME%20Co:john@example.com?secret=NHCKM5GMIOZIHAXDK2O5O4Q3ECNUSUW2&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30',
   'otpauth://totp/Beta%20Ltd.:homer@example.com?secret=LZEP5ZGGGZVLYCUOZHD5TIHMNZXJGASW&issuer=Beta%20Ltd.&algorithm=SHA1&digits=6&period=30',
   'otpauth://totp/Cats%20&%20Dogs:marge@example.com?secret=GDC4WNINHYDCQI32X4UGDQLVYNKPNG2W&issuer=Cats%20%26%20Dogs&algorithm=SHA1&digits=6&period=30',
-  'otpauth://totp/Daily%20Bugle:peter@example.com?secret=XJY7G3TOMH6LKDWTFCSSZQR6OWDFRVPC&issuer=Daily%20Bugle&algorithm=SHA1&digits=6&period=30'
+  'otpauth://totp/Daily%20Bugle:peter@example.com?secret=XJY7G3TOMH6LKDWTFCSSZQR6OWDFRVPC&issuer=Daily%20Bugle&algorithm=SHA1&digits=6&period=30',
 ];
 
 final string4 =
     "CkMKFD3GyqSCSm0oh2eyMx4gtDFmy4XZEhxBQ01FIENvOmpvaG4uZG9lQGV4YW1wbGUuY29tGgdBQ01FIENvIAEoATACCjUKCkhlbGxvId6tvu8SGEV4YW1wbGU6YWxpY2VAZ29vZ2xlLmNvbRoHRXhhbXBsZSABKAEwAhABGAAgACjn4Pv4Ag%3D%3D";
 final List<String> list4 = [
   "otpauth://totp/ACME%20Co:john.doe@example.com?secret=HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30",
-  "otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example&algorithm=SHA1&digits=6&period=30"
+  "otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example&algorithm=SHA1&digits=6&period=30",
 ];
 
 final string5 =
     "Cj8KFGnEpnTMQ7KDguNWnddyGyCbSVLaEhhBQ01FIENvOmpvaG5AZXhhbXBsZS5jb20aB0FDTUUgQ28gASgBMAIKSAoUunHzbm5h%2FLUO0yilLMI%2BdYZY1eISHURhaWx5IEJ1Z2xlOnBldGVyQGV4YW1wbGUuY29tGgtEYWlseSBCdWdsZSABKAEwAhABGAEgACibg%2B3JBg%3D%3D";
 final List<String> list5 = [
   'otpauth://totp/ACME%20Co:john@example.com?secret=NHCKM5GMIOZIHAXDK2O5O4Q3ECNUSUW2&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30',
-  'otpauth://totp/Daily%20Bugle:peter@example.com?secret=XJY7G3TOMH6LKDWTFCSSZQR6OWDFRVPC&issuer=Daily%20Bugle&algorithm=SHA1&digits=6&period=30'
+  'otpauth://totp/Daily%20Bugle:peter@example.com?secret=XJY7G3TOMH6LKDWTFCSSZQR6OWDFRVPC&issuer=Daily%20Bugle&algorithm=SHA1&digits=6&period=30',
 ];
 
 final string6 =
@@ -68,7 +68,7 @@ final List<String> list6 = [
   'otpauth://totp/ACME%20Co:nineteen@example.com?secret=6H5TIMEBA3WKFZTKXEZOND2GZIKDU72Z&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30',
   'otpauth://totp/ACME%20Co:twenty@example.com?secret=FM36OP7KSJ34HWXN6GCI772ET4JWIX4Z&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30',
   'otpauth://totp/ACME%20Co:twenty-one@example.com?secret=JSJNHJ3OMGOHUUQFDCD4A4BXNGAEMFM5&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30',
-  'otpauth://totp/ACME%20Co:twenty-two@example.com?secret=FFENYGUHJHYP43AS5ZVCALD65BMUJ4EU&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30'
+  'otpauth://totp/ACME%20Co:twenty-two@example.com?secret=FFENYGUHJHYP43AS5ZVCALD65BMUJ4EU&issuer=ACME%20Co&algorithm=SHA1&digits=6&period=30',
 ];
 
 final string1Of3UrlEncoded =
@@ -85,7 +85,7 @@ final List<String> list1Of3 = [
   'otpauth://totp/ACME:seven@example.com?secret=HZNJRPUUVLSPYOKTQ6YPPIB5WXEPRNRC&issuer=ACME&algorithm=SHA1&digits=6&period=30',
   'otpauth://totp/ACME:eight@example.com?secret=UY7C4A5GFDQTXD2ACN2WLMH7NMCCQCV6&issuer=ACME&algorithm=SHA1&digits=6&period=30',
   'otpauth://totp/ACME:nine@example.com?secret=YMS3K3GIDQMLONKPX4PMJDABDBAH7DI5&issuer=ACME&algorithm=SHA1&digits=6&period=30',
-  'otpauth://totp/ACME:ten@example.com?secret=Q62RMEJWYH3BFBEN3FG4QMVI76HIRAZ6&issuer=ACME&algorithm=SHA1&digits=6&period=30'
+  'otpauth://totp/ACME:ten@example.com?secret=Q62RMEJWYH3BFBEN3FG4QMVI76HIRAZ6&issuer=ACME&algorithm=SHA1&digits=6&period=30',
 ];
 
 final string2Of3UrlEncoded =
@@ -102,7 +102,7 @@ final List<String> list2Of3 = [
   'otpauth://totp/ACME:seventeen@example.com?secret=IGJ6T66PYDCPVKEV2RPE6TIDKCU55URT&issuer=ACME&algorithm=SHA1&digits=6&period=30',
   'otpauth://totp/ACME:eighteen@example.com?secret=YPGFOQQC7JF4Z5T72L3EIMQUC6VB5ZTH&issuer=ACME&algorithm=SHA1&digits=6&period=30',
   'otpauth://totp/ACME:nineteen@example.com?secret=RRD5MACKXUFS274VWKK2KILZ4RGIB46N&issuer=ACME&algorithm=SHA1&digits=6&period=30',
-  'otpauth://totp/ACME:twenty@example.com?secret=SG77VLHMDQWUHG7SMGY7DBLTHQRXFPDB&issuer=ACME&algorithm=SHA1&digits=6&period=30'
+  'otpauth://totp/ACME:twenty@example.com?secret=SG77VLHMDQWUHG7SMGY7DBLTHQRXFPDB&issuer=ACME&algorithm=SHA1&digits=6&period=30',
 ];
 
 final string3Of3UrlEncoded =
@@ -111,5 +111,5 @@ final string3Of3 =
     "Cj8KFG423VA%2BmkFuqplxC%2BfgO%2BASoafzEhtBQ01FOnR3ZW50eS1vbmVAZXhhbXBsZS5jb20aBEFDTUUgASgBMAIKPwoUZ5RKVxJWL7P5RcYBhy5tQL80ycISG0FDTUU6dHdlbnR5LXR3b0BleGFtcGxlLmNvbRoEQUNNRSABKAEwAhABGAMgAijYkYF4";
 final List<String> list3Of3 = [
   'otpauth://totp/ACME:twenty-one@example.com?secret=NY3N2UB6TJAW5KUZOEF6PYB34AJKDJ7T&issuer=ACME&algorithm=SHA1&digits=6&period=30',
-  'otpauth://totp/ACME:twenty-two@example.com?secret=M6KEUVYSKYX3H6KFYYAYOLTNIC7TJSOC&issuer=ACME&algorithm=SHA1&digits=6&period=30'
+  'otpauth://totp/ACME:twenty-two@example.com?secret=M6KEUVYSKYX3H6KFYYAYOLTNIC7TJSOC&issuer=ACME&algorithm=SHA1&digits=6&period=30',
 ];

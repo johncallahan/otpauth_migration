@@ -13,12 +13,14 @@ class OtpAuthMigration {
   static const uriHost = 'offline';
 
   /// encode given list of optauth URIs into a single otpauth-migration URI
-  String encode(List<String> otpAuths,
-      {bool debug = false,
-      int version = -1,
-      int batchSize = -1,
-      int batchIndex = -1,
-      int batchId = -1}) {
+  String encode(
+    List<String> otpAuths, {
+    bool debug = false,
+    int version = -1,
+    int batchSize = -1,
+    int batchIndex = -1,
+    int batchId = -1,
+  }) {
     var gai = GoogleAuthenticatorImport();
     for (var otp in otpAuths) {
       var uri = Uri.parse(otp);
@@ -52,9 +54,7 @@ class OtpAuthMigration {
     return Uri(
       scheme: uriScheme,
       host: uriHost,
-      queryParameters: {
-        'data': base64.encode(bytes),
-      },
+      queryParameters: {'data': base64.encode(bytes)},
     ).toString();
   }
 
@@ -90,7 +90,8 @@ class OtpAuthMigration {
     final uri = Uri.parse(value);
     if (uri.scheme != uriScheme || uri.host != uriHost) {
       throw ArgumentError(
-          'Expected $uriScheme://$uriHost but got ${uri.scheme}:///${uri.host}');
+        'Expected $uriScheme://$uriHost but got ${uri.scheme}:///${uri.host}',
+      );
     }
     final data = uri.queryParameters['data'];
     if (data == null || data.isEmpty) {
@@ -155,7 +156,8 @@ class OtpAuthMigration {
             break;
         }
         results.add(
-            "otpauth://totp/$name?secret=$base32String&issuer=$issuer$algorithm$digits&period=30");
+          "otpauth://totp/$name?secret=$base32String&issuer=$issuer$algorithm$digits&period=30",
+        );
       }
 
       //print("good");

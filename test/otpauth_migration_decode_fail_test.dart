@@ -13,11 +13,15 @@ void main() {
     expect(otpAuthParser.decode("otpauth-migration://offline?data="), []);
 
     expect(
-        otpAuthParser.decode("otpauth-migration://offline?data=$string1"), []);
+      otpAuthParser.decode("otpauth-migration://offline?data=$string1"),
+      [],
+    );
 
     // scheme is not case sensitive.
-    expect(otpAuthParser.decode("otpauth-MIGRATION://offline?data=$string2"),
-        list2);
+    expect(
+      otpAuthParser.decode("otpauth-MIGRATION://offline?data=$string2"),
+      list2,
+    );
 
     expect(() => otpAuthParser.decode(string3), throwsArgumentError);
   });
